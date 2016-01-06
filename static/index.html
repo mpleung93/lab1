@@ -1,25 +1,140 @@
 <!doctype html>
-
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>HCI Project Portfolio</title>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>HCI Project Portfolio</title>
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+	  	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
 
-<body>
-	<!-- this is a comment in HTML -->
-	<h1>Scott Klemmer</h1> <!-- h1 through h5 are headers. The higher the number, the smaller the header -->
-	<h4>Project Portfolio</h4>
+	<body>
+		<!-- this is a comment in HTML -->
+		<h1 class = "h1Format">Marisa Leung</h1> <!-- h1 through h5 are headers. The higher the number, the smaller the header -->
+		<h4>Project Portfolio</h4>
+		<img class = "space" src="Space-Wallpaper-Background-B62.jpg">
 
-	<!-- p means paragraph -->
-	<p>Scott is an Associate Professor of Cognitive Science and Computer Science & Engineering at UC San Diego, where he is a co-founder and Associate Director of the Design Lab. He previously served as Associate Professor of Computer Science at Stanford, where he co-directed the HCI Group, held the Bredt Faculty Scholar chair, and was a founding participant in the d.school. </p>
+		<img id="gamebuilder" class="gbPhoto" src="gamebuilder.png">
 
-	<h4>Projects</h4>
-	<ol>
-		<li>Design Thinking</li>
-		<li>Needfinding</li>
-		<li>Prototyping</li>
-		<li>...</li>
-	</ol>
-</body>
+		<img id="emotion" class="emotionPhoto" src="emotion.png">
+
+		<!-- p means paragraph -->
+
+		<div id="myPortfolio" class="myPortButton">Project Portfolio</div>
+		<div  id="myProjects" class="myProjButton">My Projects</div>
+		<div  id="back" class="backButton">Back</div>
+
+
+
+		<div id="aboutMe" class="aboutMe">Marisa is an undergraduate student of Computer Science at UC San Diego 		with a planned graduation date of June 2016. She 
+			has interned at NASA's launch complex, Kennedy Space Center as a Subject Matter Analyst for Expertise Directories. She has also worked at Lockheed Martin as a software engineer intern and at the Taiwan International Graduate Program as a <a href="http://tigpsnhcc.iis.sinica.edu.tw/">Social Networks and Human-Centered</a> Intern. She is completing her second term tutoring an upper division Computer Science Class called <a href="http://www.cse.ucsd.edu/cse140L">Digital Systems Lab</a>. Current projects include working with on an application called <a href="http://www.gamebuilder.io/">GameBuilder</a> for mobile phones that will enable the production and publication of games with ease. For the last four years she has served as a core member of the quarterly hosted Beginner Programming Competition hosted by Women in Computing (WIC).
+		 </div>
+
+		 <div id="aboutGB" class="aboutGB">
+		 	<h3>GameBuilderIO</h3>
+		 	Marisa is working with a team of six to develop an application that enables users to intuitively create and publish a game with a series of simple drags, drops, and clicks rather than code. 
+		 </div>
+
+
+
+		 <div id="aboutE" class="aboutE">
+		 	<h3>Emotional Contagion</h3>
+		 	Marisa researched the role of game character's "emotion" on a a game's general immersiveness and difficulty. She created a game with the innovative technique of incorporating emotion as a <strong>strategic</strong> element and conducted a pilot study on the resulting immersiveness and difficulty.
+		 </div>
+
+		<script>
+
+
+		$( "#myPortfolio" ).mousedown(function() {
+			$(this).toggleClass('pressed');
+			$(this).removeClass('unpressed');
+
+		}).mouseup(function() {
+			$(this).toggleClass('unpressed');
+			$(this).removeClass('pressed');
+
+			$(this).fadeOut();
+			$('#myProjects').fadeOut();
+
+			$('#aboutMe').fadeIn();
+			$('#back').fadeIn();
+
+
+
+
+
+
+		}).mouseout(function() {
+			if($(this).hasClass('pressed')){
+				$(this).toggleClass('myPortButton');
+				$(this).removeClass('pressed');
+			}
+		});
+
+		$( "#myProjects" ).mousedown(function() {
+			$(this).toggleClass('pressed');
+			$(this).removeClass('unpressed');
+
+		}).mouseup(function() {
+			$(this).toggleClass('unpressed');
+			$(this).removeClass('pressed');
+
+
+			$(this).fadeOut();
+			$('#myPortfolio').fadeOut();
+
+			$('#emotion').fadeIn();
+			$('#gamebuilder').fadeIn();
+
+			$('#aboutE').fadeIn();
+			$('#aboutGB').fadeIn();
+
+			$('#back').fadeIn();
+
+
+
+		}).mouseout(function() {
+			if($(this).hasClass('pressed')){
+				$(this).toggleClass('myPortButton');
+				$(this).removeClass('pressed');
+			}
+		});
+
+
+		$( "#back" ).mousedown(function() {
+			$(this).toggleClass('pressed');
+			$(this).removeClass('unpressed');
+
+		}).mouseup(function() {
+			$(this).toggleClass('unpressed');
+			$(this).removeClass('pressed');
+			$('#aboutMe').fadeOut();
+			$(this).fadeOut();
+			$('#emotion').fadeOut();
+			$('#gamebuilder').fadeOut();
+
+			$('#aboutE').fadeOut();
+			$('#aboutGB').fadeOut();
+
+
+
+
+
+			$('#myPortfolio').fadeIn();
+			$('#myProjects').fadeIn();
+
+
+
+		}).mouseout(function() {
+			if($(this).hasClass('pressed')){
+				$(this).toggleClass('myPortButton');
+				$(this).removeClass('pressed');
+			}
+		});
+
+
+
+
+		</script>
+	</body>
 </html>
+
